@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Master To-DO List</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+	</head>
+	<body>
+		<div class="main-container">
+			<div class="title-time-container">
+				<p class="set_date">JOUR 19 MONTH</p>
+				<p class="set_time">HEURE MINUTE</p>
+				<p class="set_time">Projet ParcourSup</p>
+			</div>
+			<h1 class="title">To-Do List GPT</h1>
+			<div class="main-todo-container">
+				<ul class="todo-list-controller"></ul>
+			</div>
+		</div>
+
+		<div class="buttons-container">
+			<div class="sidebar-add-button">
+				<div class="add-button-container closed">
+					<h3>Ajouter une tache</h3>
+					<div class="inputs-wrapper">
+						<input
+							type="text"
+							class="title-task"
+							placeholder="Nom de la tâche"
+						/>
+						<textarea
+							placeholder="Description de la tâche"
+							class="description-task"
+							rows="5"
+						></textarea>
+						<div class="ai-switch-wrapper">
+							<div class="label-ai-wrapper">
+								<p class="ai-switch-label">Mode AI</p>
+								<label class="ai-switch">
+									<input class="ai-checkbox" type="checkbox" />
+									<span class="slider-checkbox round"></span>
+								</label>
+							</div>
+
+							<div class="slider-ai-wrapper">
+								<p class="label-slider-ai hidden">Nombre de taches:</p>
+								<input
+									type="range"
+									min="1"
+									max="15"
+									value="5"
+									class="slider hidden"
+									id="slider-tasks-ai"
+								/>
+							</div>
+
+							<input type="time" value="00:00" />
+						</div>
+						<div class="api-key-container">
+							<input
+								type="password"
+								class="api-key-input hidden"
+								placeholder="Clé API Claude"
+							/>
+						</div>
+					</div>
+					<button class="add-task-button" onclick="addTask()">Ajouter</button>
+					<div class="modify-wrapper">
+						<button class="cancel-task-button hidden" onclick="cancelModify()">
+							Annuler
+						</button>
+						<button class="modify-task-button hidden" onclick="modifyTask()">
+							Modifier
+						</button>
+						<button class="delete-task-button hidden" onclick="deleteTask()">
+							Supprimer
+						</button>
+					</div>
+				</div>
+				<button type="button" class="add-button-sidebar" onclick="toggleAdd()">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						height="24px"
+						viewBox="0 -960 960 960"
+						width="24px"
+						fill="#e8eaed"
+					>
+						<path
+							d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"
+						/>
+					</svg>
+				</button>
+			</div>
+		</div>
+	</body>
+	<script src="script.js"></script>
+</html>
